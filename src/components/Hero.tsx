@@ -4,11 +4,11 @@ const SpaceGrotesk = Space_Grotesk({subsets: ['latin'],weight:"400"})
 
 const Hero = () => {
     return(
-        <div className={`${SpaceGrotesk.className} flex flex-row justify-between items-center w-full`}>
-            <div className={`flex flex-col max-w-2xl`}>
-                <span className='font-semibold text-6xl tracking-wide'>AI /powered/ Pubic</span>
-                <span className='font-semibold text-6xl mt-7 tracking-wide'>Goods Funding</span>
-                <span className='mt-10 text-xl tracking-wide'>AI-PGF: A Proactive Grants Program and Movement to Build towards a <strong>Funding AGI</strong></span>
+        <div className={`${SpaceGrotesk.className} flex flex-col gap-10 md:gap-0 md:flex-row justify-between items-center w-full`}>
+            <div className={`flex flex-col md:max-w-2xl items-center md:items-start md:text-start`}>
+                <span className='font-semibold text-4xl md:text-6xl tracking-wide'>AI /powered/ Pubic</span>
+                <span className='font-semibold text-4xl md:text-6xl md:mt-7 mt-3 tracking-wide text-center md:text-start'>Goods Funding</span>
+                <span className='mt-10 text-xl tracking-wide text-center md:text-start'>AI-PGF: A Proactive Grants Program and Movement to Build towards a <strong>Funding AGI</strong></span>
                 <div className='flex flex-row gap-6 mt-10'>
                     <button className='p-4 rounded-full bg-[#0057FF] text-white'>
                         <span className='font-semibold'>Get Funded</span>
