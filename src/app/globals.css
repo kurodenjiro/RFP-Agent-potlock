@@ -13,3 +13,10 @@
         @apply rounded-full bg-gray-400 /*color trackbar*/
     }
 }
+
+.ql-toolbar.ql-snow{
+    @apply rounded-t-lg
+}
+.ql-container.ql-snow{
+    @apply rounded-b-lg
+}

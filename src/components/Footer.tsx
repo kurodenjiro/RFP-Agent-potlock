@@ -1,6 +1,6 @@
 const Footer = () =>{
     return(
-        <div className="bg-[#24292F] w-full md:h-20 h-44 flex justify-center items-center">
+        <div className="bg-[#24292F] w-full md:h-20 h-48 pb-10 md:pb-0 flex justify-center items-center">
             <div className="md:max-w-screen-2xl md:px-20 px-5 flex gap-4 flex-col md:flex-row justify-between items-center w-full">
                 <div className="flex flex-row items-center gap-5">
                     <img width={20} src="/assets/icon/x.svg" alt="icon" />

@@ -50,7 +50,7 @@ const Proposals = () =>{
                         </div>
                         {
                             windowSize?.width > 768 &&(
-                                <Link href={"#"} className="flex flex-row gap-2 p-3 rounded-2xl bg-[#0969DA] text-white hover:bg-opacity-90">
+                                <Link href={"/create-proposal"} className="flex flex-row gap-2 p-3 rounded-2xl bg-[#0969DA] text-white hover:bg-opacity-90">
                                     <img width={16} src="/assets/icon/add-white.svg" alt="icon" />
                                     <span>Submit Proposal</span>
                                 </Link>
