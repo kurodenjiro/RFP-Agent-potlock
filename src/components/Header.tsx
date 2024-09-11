@@ -4,11 +4,18 @@ import { navbarItems } from "@/utils/utils";
 import { useEffect, useState } from "react";
 
 const Header = () =>{
+    const [currentIndex,setCurrentIndex] = useState<number|null>(null);
 
     const [windowSize, setWindowSize] = useState<any>({
         width: null,
         height: null
     });
+
+    useEffect(()=>{
+        if(localStorage.getItem("indexHeader")){
+            setCurrentIndex(Number(localStorage.getItem("indexHeader")))
+        }
+    },[])
 
     useEffect(() => {
         function handleResize() {
@@ -22,6 +29,10 @@ const Header = () =>{
 
         return () => window.removeEventListener("resize", handleResize);
     }, []); 
+
+    const onSelectLink = (idx:number) =>{
+        localStorage.setItem("indexHeader",idx.toString())
+    }
 
 
     return(
@@ -40,7 +51,7 @@ const Header = () =>{
                             <div className="flex flex-row gap-5 items-center invisible md:visible">
                                 {
                                     navbarItems.map((item,idx)=>(
-                                        <Link key={idx} href={`/${item.toLowerCase()}`}>
+                                        <Link key={idx} onClick={()=>onSelectLink(idx)} href={`/${item.toLowerCase()}`} className={`${currentIndex==idx&&"border-b-2 border-blue-400"} hover:border-b-2 hover:border-blue-400`}>
                                             <span className="text-lg">{item}</span>
                                         </Link>
                                     ))

@@ -2,7 +2,7 @@
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import ProposalPost from "@/components/ProposalPost";
-import ProposalTemplate from "@/components/ProposalTemplate";
+import ProposalTemplate from "@/components/Template";
 import Section from "@/components/Section";
 import Link from "next/link";
 import { useEffect,useState } from "react";
@@ -30,7 +30,7 @@ const Proposals = () =>{
     return(
         <div className="w-full h-full">
             <Header/>
-            <Section/>
+            <Section title="Proposal"/>
             <div className="flex justify-center items-center">
                 <div className="md:max-w-screen-2xl md:px-20 px-5 w-full md:mt-10 mt-4 md:pb-20">
                     <div className="flex flex-row justify-between w-full">
@@ -50,7 +50,7 @@ const Proposals = () =>{
                         </div>
                         {
                             windowSize?.width > 768 &&(
-                                <Link href={"/create-proposal"} className="flex flex-row gap-2 p-3 rounded-2xl bg-[#0969DA] text-white hover:bg-opacity-90">
+                                <Link href={"/proposals/create-proposal"} className="flex flex-row gap-2 p-3 rounded-full bg-[#0969DA] text-white hover:bg-opacity-90">
                                     <img width={16} src="/assets/icon/add-white.svg" alt="icon" />
                                     <span>Submit Proposal</span>
                                 </Link>

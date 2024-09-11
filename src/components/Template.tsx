@@ -1,4 +1,4 @@
-const ProposalTemplate = () =>{
+const Template = () =>{
     return(
             <div className="border border-gray-300 shadow-sm rounded-lg p-3 flex flex-col gap-3">
                 <img width={20} height={40} className="w-full h-full" src="/assets/background/skeleton.png" alt="background" />
@@ -11,4 +11,4 @@ const ProposalTemplate = () =>{
     )
 }
 
-export default ProposalTemplate;
+export default Template;

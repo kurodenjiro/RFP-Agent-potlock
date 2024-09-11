@@ -1,10 +1,17 @@
+"use client"
 import Container from "@/components/Container";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Link from "next/link";
+import { useEffect } from "react";
 
 export default function Home() {
+
+  useEffect(()=>{
+    localStorage.setItem("indexHeader","null")
+  },[])
+
   return (
     <div className="w-full h-full">
       <Header/>

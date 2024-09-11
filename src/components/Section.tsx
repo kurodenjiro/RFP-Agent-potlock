@@ -3,7 +3,7 @@
 import { useEffect,useState } from "react";
 
 
-const Section = () =>{
+const Section = ({title}:{title?: string}) =>{
 
     const [windowSize, setWindowSize] = useState<any>({
         width: null,
@@ -35,7 +35,7 @@ const Section = () =>{
             }
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
                 <div className="flex flex-col md:gap-5 gap-1 text-center px-5 items-center">
-                    <span className="font-semibold text-3xl md:text-4xl">Proposal</span>
+                    <span className="font-semibold text-3xl md:text-4xl">{title?title:""}</span>
                     <p className="font-semibold text-sm max-w-sm md:max-w-6xl md:text-lg">Lorem ipsum dolor sit amet consectetur. Tortor ac amet imperdiet nam odio varius proin. </p>
                     <div className="flex flex-col md:flex-row gap-3 mt-3 items-center">
                         <div className="flex flex-row gap-2 border border-gray-200 bg-white text-black p-3 rounded-full w-full md:w-[300px] items-center">
