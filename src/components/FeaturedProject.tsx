@@ -40,10 +40,10 @@ const FeaturedProject = () =>{
                     <img width={16} src="/assets/icon/dollar.svg" alt="icon" />
                     <small className="text-blue-700 font-bold">2,000</small>
                 </div>
-                <div className="flex bg-white border border-gray-400 p-2 py-1 gap-1 rounded-2xl">
+                <button className="flex cursor-pointer bg-white border border-gray-400 p-2 py-1 gap-1 rounded-2xl">
                     <img width={14} src="/assets/icon/pencil-simple-line.svg" alt="icon" />
                     <small className="text-xs">Dralf</small>
-                </div>
+                </button>
             </div>
         </div>
     )
