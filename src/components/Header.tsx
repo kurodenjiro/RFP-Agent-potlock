@@ -27,7 +27,9 @@ const Header = () =>{
     return(
         <div className="flex flex-row justify-center items-center md:py-4 py-2 w-full border-b border-gray-100 shadow-sm">
             <div className="flex flex-row justify-between w-full items-center md:max-w-screen-2xl md:px-20 px-5">
-                <img width={windowSize?.width <= 768?100:140} src="/assets/logo/logo.svg" alt="logo" />
+                <Link href={"/"}>
+                    <img width={windowSize?.width <= 768?100:140} src="/assets/logo/logo.svg" alt="logo" />
+                </Link>
                 <div className="flex flex-row gap-16 items-center">
                     {
                         windowSize?.width <= 768 ?(
