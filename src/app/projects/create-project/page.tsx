@@ -1,22 +1,16 @@
+"use client"
 import Header from "@/components/Header"
 import Footer from "@/components/Footer"
 import Link from "next/link"
+import SectionCreate from "@/components/SectionCreate";
 const create_project = () =>{
     return(
         <div className="w-full h-full">
             <Header/>
+            <SectionCreate title="Create Project" subtitle="Project"/>
             <div className="flex justify-center items-center">
-                <div className=" w-full md:mt-20 mt-10 pb-20">
-                    <div className="bg-slate-200 w-full flex flex-col px-10 md:px-20 items-start justify-start">
-                        <div className="flex flex-col gap-5  items-left my-10 md:mx-5">
-                            <span className="text-2xl text-left font-bold ">Create Project</span>
-                            <div className="flex gap-1">
-                                <p className=" font-bold">Project &#62;</p>
-                                <p className="font-thin">Create Project</p>
-                            </div>
-                        </div>
-                    </div> 
-                    <div className="flex flex-col-reverse md:flex-row justify-between px-2 py-5 md:p-20">
+                <div className="md:max-w-screen-2xl md:px-20 px-5 w-full md:mt-10 mt-4 md:pb-20">
+                    <div className="flex flex-col-reverse md:flex-row justify-between py-5">
                         <div className="flex flex-col w-full md:w-[1100px] gap-5">
                             <div className="py-5 md:hidden">
                                 <div className="flex flex-col mt-4">
