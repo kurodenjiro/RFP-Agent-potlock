@@ -2,7 +2,7 @@
 import { truncateString } from "@/utils/utils";
 import { useEffect, useState } from "react";
 
-const Project = () =>{
+const ProjectFeed = () =>{
 
     const [windowSize, setWindowSize] = useState<any>({
         width: null,
@@ -25,8 +25,8 @@ const Project = () =>{
     return(
         <div className="md:p-5 p-3 flex flex-col md:flex-row justify-between items-center gap-5 w-full border border-gray-300 rounded-lg shadow-sm">
             <div className="flex flex-col md:flex-row gap-3 flex-1">
-                <div className="flex flex-row items-center gap-2">
-                    <img className="md:w-7 md:h-7 h-8 w-8 rounded-full" src="/assets/avatar.png" alt="avatar" />
+                <div className="flex flex-row md:items-center items-start gap-2 md:w-14 md:h-14">
+                    <img className="h-8 w-8 rounded-full" src="/assets/avatar.png" alt="avatar" />
                     <span className="font-bold text-lg md:text-xl md:max-w-sm md:hidden">Lorem ipsum dolor sit amet consectetur. </span>
                 </div>
                 <div className="flex flex-col md:gap-3 gap-2">
@@ -72,4 +72,4 @@ const Project = () =>{
     )
 }
 
-export default Project;
+export default ProjectFeed;

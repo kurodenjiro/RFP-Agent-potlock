@@ -6,7 +6,7 @@ import Template from "@/components/Template";
 import Section from "@/components/Section";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import Project from "@/components/Project";
+import ProjectFeed from "@/components/ProjectFeed";
 
 
 const Projects = () =>{
@@ -75,11 +75,11 @@ const Projects = () =>{
                         <div className="flex flex-col gap-3">
                             <span className="text-xl font-bold">ALL PROJECT</span>
                             <div className="flex flex-col gap-3">
-                                <Project/>
-                                <Project/>
-                                <Project/>
-                                <Project/>
-                                <Project/>
+                                <ProjectFeed/>
+                                <ProjectFeed/>
+                                <ProjectFeed/>
+                                <ProjectFeed/>
+                                <ProjectFeed/>
                             </div> 
                             <button className="w-full cursor-pointer bg-gray-200 flex justify-center items-center py-3 rounded-3xl">
                                 <small className="font-bold">Load More</small>

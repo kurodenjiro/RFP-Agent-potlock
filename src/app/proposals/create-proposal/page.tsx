@@ -1,7 +1,7 @@
 "use client"
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
-import SectionCreateProposal from "@/components/SectionCreateProposal";
+import SectionCreate from "@/components/SectionCreate";
 import { useEffect, useState } from "react";
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
@@ -37,7 +37,7 @@ const CreateProposal = () =>{
     return(
         <div className="w-full h-full">
             <Header/>
-            <SectionCreateProposal/>
+            <SectionCreate title="Create Proposal" subtitle="Proposal"/>
             <div className="flex justify-center items-center">
                 <div className="md:max-w-screen-2xl md:px-20 px-5 w-full md:mt-10 mt-4 md:pb-20">
                     <div className="flex flex-col-reverse md:flex-row w-full justify-between gap-10">
