@@ -7,7 +7,7 @@ import { useState } from "react";
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 
-const create_project = () =>{
+const CreateProject = () =>{
     const [description, setDescription] = useState<string|null>(null)
     const [isShowDropDown, setIsShowDropDown] = useState<boolean>(false)
     const [selectReview, setSelectReview] = useState<boolean>(false)
@@ -289,4 +289,4 @@ const create_project = () =>{
         </div>
     )
 }
-export default create_project
+export default CreateProject;
