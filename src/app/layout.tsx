@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
+import localFont from 'next/font/local'
 import "./globals.css";
 
-import { Space_Grotesk } from 'next/font/google'
 
-const SpaceGrotesk = Space_Grotesk({subsets: ['latin'],weight:"400"})
+const SpaceGrotesk = localFont({ src: '../font/SpaceGrotesk.ttf' })
 
 export const metadata: Metadata = {
   title: "AI GPF",
