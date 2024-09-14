@@ -4,8 +4,10 @@ import Footer from "@/components/Footer"
 import Link from "next/link"
 import SectionCreate from "@/components/SectionCreate";
 import { useState } from "react";
-import ReactQuill from 'react-quill';
-import 'react-quill/dist/quill.snow.css';
+import dynamic from "next/dynamic";
+
+
+const Editor = dynamic(()=>import("@/components/Editor"),{ssr:false})
 
 const CreateProject = () =>{
     const [description, setDescription] = useState<string|null>(null)
@@ -63,7 +65,7 @@ const CreateProject = () =>{
                             <div className="flex flex-col gap-2 pb-16 md:pb-10">
                                 <span className="font-bold text-lg">Description</span>
                                 <small className="text-gray-400">Lorem ipsum dolor sit amet consectetur. Orci purus condimentum aliquet volutpat tincidunt semper. Eu eget arcu sodales at.</small>
-                                <ReactQuill theme="snow" className="h-44 text-sm md:text-base" value={description?description:""} onChange={setDescription} />
+                                <Editor/>
                             </div>
                             <div className="flex flex-col gap-2">
                                 <span className="font-bold text-lg">Project Name</span>
@@ -289,4 +291,4 @@ const CreateProject = () =>{
         </div>
     )
 }
-export default CreateProject;
+export default CreateProject;  

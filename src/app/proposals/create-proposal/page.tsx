@@ -3,8 +3,10 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import SectionCreate from "@/components/SectionCreate";
 import { useEffect, useState } from "react";
-import ReactQuill from 'react-quill';
-import 'react-quill/dist/quill.snow.css';
+import dynamic from "next/dynamic";
+
+const Editor = dynamic(()=>import("@/components/Editor"),{ssr:false})
+
 
 const CreateProposal = () =>{
     const [description, setDescription] = useState<string|null>(null);
@@ -50,7 +52,7 @@ const CreateProposal = () =>{
                             <div className="flex flex-col gap-4">
                                 <div className="flex flex-col gap-2">
                                     <span className="font-semibold text-xl">Category</span>
-                                    <small>Lorem ipsum dolor sit amet consectetur. Orci purus condimentum aliquet volutpat tincidunt semper. Eu eget arcu sodales at.</small>
+                                    <small className="text-gray-400">Lorem ipsum dolor sit amet consectetur. Orci purus condimentum aliquet volutpat tincidunt semper. Eu eget arcu sodales at.</small>
                                     <div className="w-full relative">
                                         <button onClick={()=>setIsShowDropDown((prv)=>!prv)} className="w-full focus:border-gray-500 shadow-sm cursor-pointer mt-2 border borde-gray-300 rounded-lg flex flex-row justify-between px-3 py-2">
                                             <span className="text-sm md:text-base">Choose Category</span>
@@ -67,18 +69,18 @@ const CreateProposal = () =>{
                                 </div>
                                 <div className="flex flex-col gap-2">
                                     <span className="font-semibold text-xl">Title</span>
-                                    <small>Lorem ipsum dolor sit amet consectetur. Orci purus condimentum aliquet volutpat tincidunt semper. Eu eget arcu sodales at.</small>
+                                    <small className="text-gray-400">Lorem ipsum dolor sit amet consectetur. Orci purus condimentum aliquet volutpat tincidunt semper. Eu eget arcu sodales at.</small>
                                     <input className="w-full text-sm md:text-base rounded-lg px-3 py-2 outline-none border border-gray-300 shadow-sm focus:border-gray-500" type="text" placeholder="Enter Title Here"/>
                                 </div>
                                 <div className="flex flex-col gap-2">
                                     <span className="font-semibold text-xl">Summary</span>
-                                    <small>Lorem ipsum dolor sit amet consectetur. Orci purus condimentum aliquet volutpat tincidunt semper. Eu eget arcu sodales at.</small>
+                                    <small className="text-gray-400">Lorem ipsum dolor sit amet consectetur. Orci purus condimentum aliquet volutpat tincidunt semper. Eu eget arcu sodales at.</small>
                                     <textarea className="w-full text-sm md:text-base rounded-lg px-3 py-2 outline-none border border-gray-300 shadow-sm focus:border-gray-500 h-32 resize-none" placeholder="Enter Summary Here"/>
                                 </div>
                                 <div className="flex flex-col gap-2">
                                     <span className="font-semibold text-xl">Description</span>
-                                    <small>Lorem ipsum dolor sit amet consectetur. Orci purus condimentum aliquet volutpat tincidunt semper. Eu eget arcu sodales at.</small>
-                                    <ReactQuill theme="snow" className="h-44 text-sm md:text-base" value={description?description:""} onChange={setDescription} />
+                                    <small className="text-gray-400">Lorem ipsum dolor sit amet consectetur. Orci purus condimentum aliquet volutpat tincidunt semper. Eu eget arcu sodales at.</small>
+                                    <Editor/>
                                 </div>
                                 <div className="flex flex-col gap-2 mt-16">
                                     <span className="font-semibold text-xl">Final Consent</span>
@@ -224,7 +226,7 @@ const CreateProposal = () =>{
                                             <div className="w-full h-0.5 bg-gray-200"/>
                                             <div className="flex flex-col gap-2 pb-5">
                                                 <span className="font-semibold">Link Proposals (Optional)</span>
-                                                <small>Link any relevant proposals(e.g Previous milestones).</small>
+                                                <small className="text-gray-400">Link any relevant proposals(e.g Previous milestones).</small>
                                                 <div className="flex flex-row gap-2 items-center md:items-start w-full justify-between">
                                                     <div className="flex flex-row gap-2 items-center">
                                                         <img width={20} className="w-7 h-7 rounded-full" src="/assets/avatar.png" alt="avatar" />
@@ -261,7 +263,7 @@ const CreateProposal = () =>{
                                         !viewFundingDetails&&(
                                             <div className="flex flex-col gap-3 mt-3 pb-5">
                                                 <span>Recipient NEAR Wallet Address</span>
-                                                <small>Enter the address that will receive the funds. We&#39;ll need this to send a test transaction once your proposal is approved.</small>
+                                                <small className="text-gray-400">Enter the address that will receive the funds. We&#39;ll need this to send a test transaction once your proposal is approved.</small>
                                                 <div className="flex flex-row gap-2 items-center md:gap-3 border border-gray-200 rounded-lg p-2 px-3 mt-3">
                                                     <span className="text-[#6f7479] md:text-base text-sm">@</span>
                                                     <input type="text" className="outline-none md:text-base text-sm" placeholder="Enter Address"/>
@@ -285,7 +287,7 @@ const CreateProposal = () =>{
                                                 </div>
                                                 <div className="flex flex-col gap-3">
                                                     <span>Total Amount (USD)</span>
-                                                    <small className="text-xs">Enter the exact amount you are requesting in USD. See <strong>Funding Documentation</strong> for guidelines.</small>
+                                                    <small className="text-xs text-gray-400">Enter the exact amount you are requesting in USD. See <strong>Funding Documentation</strong> for guidelines.</small>
                                                     <div className="border border-gray-200 rounded-lg p-2 px-3 flex flex-row gap-2 items-center md:gap-3">
                                                         <span className="text-[#6f7479] md:text-base text-sm">$</span>
                                                         <input type="text" className="outline-none md:text-base text-sm" placeholder="0.00" />
@@ -293,7 +295,7 @@ const CreateProposal = () =>{
                                                 </div>
                                                 <div className="flex flex-col gap-3">
                                                     <span>Currency</span>
-                                                    <small className="text-xs">Select your preferred currency for receiving funds. Note: The exchange rate for NEAR tokens will be the closing rate at the day of the invoice.</small>
+                                                    <small className="text-xs text-gray-400">Select your preferred currency for receiving funds. Note: The exchange rate for NEAR tokens will be the closing rate at the day of the invoice.</small>
                                                     <button onClick={()=>setIsShowDropDownCurrency((prv)=>!prv)} className="border border-gray-200 rounded-lg p-2 px-3 flex flex-row justify-between gap-3">
                                                         <span className="text-[#6f7479] text-sm md:text-base">USDC</span>
                                                         <img width={20} src="/assets/icon/arrow-down-gray.svg" alt="icon" />

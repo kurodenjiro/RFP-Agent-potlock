@@ -12,9 +12,16 @@ import ProjectFeed from "@/components/ProjectFeed";
 const Projects = () =>{
 
     const [windowSize, setWindowSize] = useState<any>({
-        width: null,
-        height: null
+        width: 0,
+        height: 0
     });
+
+    if (!windowSize) {
+        return {
+            width: 0,
+            height: 0
+        }
+    }
 
     useEffect(() => {
         function handleResize() {
@@ -55,7 +62,7 @@ const Projects = () =>{
                                 windowSize?.width > 768 &&(
                                     <Link href={"/projects/create-project"} className="flex flex-row gap-2 p-3 rounded-full bg-[#0969DA] text-white hover:bg-opacity-90">
                                         <img width={16} src="/assets/icon/add-white.svg" alt="icon" />
-                                        <span>Submit Proposal</span>
+                                        <span>Submit Project</span>
                                     </Link>
                                 )
                             }
